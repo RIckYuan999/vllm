@@ -160,7 +160,7 @@ class FunctionDefinition(OpenAIBaseModel):
     name: str
     description: Optional[str] = None
     parameters: Optional[dict[str, Any]] = None
-
+    model_config = ConfigDict(extra="ignore")
 
 class ChatCompletionToolsParam(OpenAIBaseModel):
     type: Literal["function"] = "function"
