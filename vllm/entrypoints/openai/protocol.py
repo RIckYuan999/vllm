@@ -32,7 +32,7 @@ _LONG_INFO = torch.iinfo(torch.long)
 
 class OpenAIBaseModel(BaseModel):
     # OpenAI API does allow extra fields
-    model_config = ConfigDict(extra="allow")
+    model_config = ConfigDict(extra="ignore")
 
     # Cache class field names
     field_names: ClassVar[Optional[set[str]]] = None
@@ -160,7 +160,6 @@ class FunctionDefinition(OpenAIBaseModel):
     name: str
     description: Optional[str] = None
     parameters: Optional[dict[str, Any]] = None
-    model_config = ConfigDict(extra="ignore")
 
 class ChatCompletionToolsParam(OpenAIBaseModel):
     type: Literal["function"] = "function"
