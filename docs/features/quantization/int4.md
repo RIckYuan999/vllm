@@ -1,7 +1,4 @@
----
-title: INT4 W4A16
----
-[](){ #int4 }
+# INT4 W4A16
 
 vLLM supports quantizing weights to INT4 for memory savings and inference acceleration. This quantization method is particularly useful for reducing model size and maintaining low latency in workloads with low queries per second (QPS).
 
@@ -111,7 +108,8 @@ After quantization, you can load and run the model in vLLM:
 
 ```python
 from vllm import LLM
-model = LLM("./Meta-Llama-3-8B-Instruct-W4A16-G128")
+
+llm = LLM("./Meta-Llama-3-8B-Instruct-W4A16-G128")
 ```
 
 To evaluate accuracy, you can use `lm_eval`:
